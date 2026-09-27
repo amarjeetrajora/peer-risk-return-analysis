@@ -1,0 +1,13 @@
+# Industry Risk & Return Analysis — dependencies
+# Core data / numerics / plotting used across src/config.py, data_loader.py,
+# preprocessing.py, metrics.py, comparison.py, visualization.py
+
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+
+# Price data acquisition (src/data_loader.py)
+yfinance>=0.2.28
+
+# To open and run notebooks/industry_risk_return_analysis.ipynb
+jupyter>=1.0.0
