@@ -19,15 +19,15 @@ import datetime
 # Do not hard-code company-specific logic anywhere else in the project;
 # every downstream function will read from this dictionary.
 
-INDUSTRY = "IT Services"
+INDUSTRY = "Private Banking"
 
 COMPANIES = {
-    "TCS": "TCS.NS",
-    "Infosys": "INFY.NS",
-    "Wipro": "WIPRO.NS",
-    "HCL Technologies": "HCLTECH.NS",
-    "Tech Mahindra": "TECHM.NS",
-    "Mphasis": "MPHASIS.NS",
+    "HDFC Bank": "HDFCBANK.NS",
+    "ICICI Bank": "ICICIBANK.NS",
+    "Kotak Mahindra Bank": "KOTAKBANK.NS",
+    "Axis Bank": "AXISBANK.NS",
+    "IndusInd Bank": "INDUSINDBK.NS",
+    "Federal Bank": "FEDERALBNK.NS",
 }
 
 BENCHMARK_NAME = "NIFTY 50"

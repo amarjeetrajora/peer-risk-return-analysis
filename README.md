@@ -52,9 +52,9 @@ Give it a list of NSE tickers for one industry and it will:
 
 ​```bash
 git clone <repo-url>
-cd industry-risk-return-analysis
+cd peer-risk-return-analysis
 pip install -r requirements.txt
-jupyter notebook notebooks/industry_risk_return_analysis.ipynb
+jupyter notebook notebooks/peer_risk_return_analysis.ipynb
 ​```
 
 Then, inside the notebook:
@@ -70,15 +70,15 @@ Everything that determines *what* gets analyzed lives in one place:
 **`src/config.py`**. The company universe is a single dictionary:
 
 ```python
-INDUSTRY = "IT Services"
+INDUSTRY = "Private Banking"
 
 COMPANIES = {
-    "TCS": "TCS.NS",
-    "Infosys": "INFY.NS",
-    "Wipro": "WIPRO.NS",
-    "HCL Technologies": "HCLTECH.NS",
-    "Tech Mahindra": "TECHM.NS",
-    "Mphasis": "MPHASIS.NS",
+    "HDFC Bank": "HDFCBANK.NS",
+    "ICICI Bank": "ICICIBANK.NS",
+    "Kotak Mahindra Bank": "KOTAKBANK.NS",
+    "Axis Bank": "AXISBANK.NS",
+    "IndusInd Bank": "INDUSINDBK.NS",
+    "Federal Bank": "FEDERALBNK.NS",
 }
 ```
 
@@ -90,6 +90,8 @@ download, quality checks, returns, metrics, peer comparison, profiles,
 and all 10 charts — reads from this dictionary and regenerates
 automatically for whichever companies are listed. No per-company code
 anywhere else in the project.
+
+The framework can also be used to analyze a custom mix of companies across different industries. To do this, simply set INDUSTRY = "Mixed" in config.py and replace the COMPANIES dictionary with the companies of your choice. The companies do not need to belong to the same industry. For example see **INDUSTRY = "Mixed"** in **Examples**.
 
 Other settings in the same file:
 
@@ -157,7 +159,7 @@ names with price history well before the default `2011-01-01` start
 date. Remember to also update `INDUSTRY` to a matching label so it
 prints correctly in `validate_config()`'s summary.
 
-**FMCG** *(currently configured)*
+**FMCG**
 ```python
 COMPANIES = {
     "Hindustan Unilever": "HINDUNILVR.NS",
@@ -169,7 +171,7 @@ COMPANIES = {
 }
 ```
 
-**IT Services**
+**IT Services** 
 ```python
 COMPANIES = {
     "TCS": "TCS.NS",
@@ -181,7 +183,7 @@ COMPANIES = {
 }
 ```
 
-**Private Banking**
+**Private Banking** *(currently configured)*
 ```python
 COMPANIES = {
     "HDFC Bank": "HDFCBANK.NS",
@@ -209,11 +211,22 @@ COMPANIES = {
 ```python
 COMPANIES = {
     "Maruti Suzuki": "MARUTI.NS",
-    "Tata Motors": "TATAMOTORS.NS",
     "Mahindra & Mahindra": "M&M.NS",
     "Bajaj Auto": "BAJAJ-AUTO.NS",
     "Eicher Motors": "EICHERMOT.NS",
     "Hero MotoCorp": "HEROMOTOCO.NS",
+}
+```
+
+**Mixed** 
+```python
+COMPANIES = {
+    "TCS": "TCS.NS",
+    "Infosys": "INFY.NS",
+    "Hero MotoCorp": "HEROMOTOCO.NS",
+    "ICICI Bank": "ICICIBANK.NS",
+    "Dabur": "DABUR.NS",
+    "Cipla": "CIPLA.NS",
 }
 ```
 
